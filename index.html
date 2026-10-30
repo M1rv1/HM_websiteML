@@ -118,6 +118,14 @@
     .faq-item[open] summary::after { content: "−"; }
     .faq-answer { padding: 0 22px 20px; color: var(--muted); }
     .faq-answer p { margin: 0; }
+    .ml-comparison { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .comparison-card { padding: clamp(24px, 3vw, 32px); }
+    .comparison-card h3 { margin-bottom: 10px; font-size: 1.3rem; }
+    .comparison-card p { color: var(--muted); }
+    .comparison-card ul { margin: 0; padding-left: 1.2rem; color: var(--muted); }
+    .comparison-card li + li { margin-top: 9px; }
+    .comparison-card li::marker { color: var(--accent); }
+    .comparison-note { margin-top: 20px; }
     .cta { padding: 60px 0; }
     .cta-panel { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: clamp(26px, 5vw, 48px); border-radius: 26px; background: linear-gradient(120deg, #e9e7ff, #e7fbf7); }
     .cta-panel h2 { margin-bottom: 10px; font-size: clamp(1.7rem, 3vw, 2.4rem); line-height: 1.15; letter-spacing: -.04em; }
@@ -160,6 +168,7 @@
       .visual-label { font-size: .72rem; padding: 6px 8px; }
       section { padding: 60px 0; }
       .cards, .roadmap { grid-template-columns: 1fr; }
+      .ml-comparison { grid-template-columns: 1fr; }
       .card, .step { padding: 22px; }
       .controls { grid-template-columns: 1fr; }
       .cta-panel { align-items: flex-start; flex-direction: column; }
@@ -456,6 +465,37 @@
         </div>
       </div>
     </section>
+
+    <section id="ml-vs-neural-networks">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Два понятия — не два конкурента</p>
+          <h2>Чем машинное обучение отличается от нейросетей?</h2>
+          <p>Машинное обучение — широкая область, а нейронные сети — один из типов моделей внутри неё.</p>
+        </div>
+        <div class="ml-comparison">
+          <article class="card comparison-card">
+            <h3>Машинное обучение (ML)</h3>
+            <p>Подход, при котором алгоритм находит закономерности в данных и использует их для решения задачи.</p>
+            <ul>
+              <li>Включает разные модели: например, линейные модели, деревья решений, метод опорных векторов и нейронные сети.</li>
+              <li>Для многих задач с таблицами классические алгоритмы могут быть эффективным выбором; подход проверяют на конкретных данных.</li>
+            </ul>
+          </article>
+          <article class="card comparison-card">
+            <h3>Нейронные сети</h3>
+            <p>Семейство моделей машинного обучения из связанных вычислительных элементов, организованных в слои.</p>
+            <ul>
+              <li>Глубокое обучение опирается на многослойные нейронные сети, которые учатся строить сложные представления данных.</li>
+              <li>Сети часто применяют для изображений, текста и аудио; результат зависит от данных, настройки и доступных вычислительных ресурсов.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="example-note comparison-note">
+          <p><strong>Главное:</strong> нейросети не стоят «вне» машинного обучения — это один из его инструментов. Выбор модели зависит от задачи, данных и требований к результату; ни один подход не лучший во всех случаях.</p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -471,6 +511,7 @@
         <h2 class="footer-heading">Разделы сайта</h2>
         <div class="footer-links">
           <a href="#about">О машинном обучении</a>
+          <a href="#ml-vs-neural-networks">ML и нейросети</a>
           <a href="#roadmap">План обучения</a>
           <a href="#practice">Практика</a>
           <a href="#tools">Инструменты</a>
